@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) 0 var(--space-4);
+  border-bottom: 1px solid var(--moss-pale);
+  margin-bottom: var(--space-4);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logoMark {
+  flex-shrink: 0;
+  animation: breathe 5s ease-in-out infinite;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--moss);
+  line-height: 1.1;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.08em;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--moss-pale);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  border-color: var(--moss-light);
+  color: var(--moss);
+  background: rgba(61, 90, 62, 0.05);
+}
+
+@media (max-width: 480px) {
+  .count { display: none; }
+  .name { font-size: 1.1rem; }
+}

@@ -1,0 +1,113 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--moss-pale);
+  margin-bottom: var(--space-6);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--stone);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab:hover {
+  color: var(--moss);
+  background: rgba(61, 90, 62, 0.06);
+}
+
+.tabActive {
+  background: var(--moss);
+  color: var(--parchment);
+}
+
+.tabActive:hover {
+  background: var(--moss-light);
+  color: var(--parchment);
+}
+
+.tabIcon {
+  font-size: 0.85rem;
+}
+
+.tabBadge {
+  background: var(--dusk);
+  color: var(--ink);
+  border-radius: var(--radius-full);
+  font-size: 0.6rem;
+  padding: 1px 6px;
+  font-weight: 500;
+  min-width: 18px;
+  text-align: center;
+}
+
+.tabActive .tabBadge {
+  background: rgba(255,255,255,0.25);
+  color: var(--parchment);
+}
+
+.main {
+  flex: 1;
+  padding-bottom: var(--space-16);
+}
+
+.panel {
+  animation: fadeUp 0.4s var(--ease-out) both;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  z-index: 1000;
+  animation: fadeUp 0.3s var(--ease-out) both;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.toast_success {
+  background: var(--moss);
+  color: var(--parchment);
+}
+
+.toast_error {
+  background: #8a4a3e;
+  color: #f5e8e4;
+}
+
+@media (max-width: 600px) {
+  .tab span:not(.tabIcon):not(.tabBadge) {
+    display: none;
+  }
+  .tab {
+    padding: var(--space-2) var(--space-3);
+  }
+  .tabIcon {
+    font-size: 1.1rem;
+  }
+}
